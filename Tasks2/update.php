@@ -1,4 +1,5 @@
 <?php
+
 $data = [
     "id"    => $_GET['id'],
     "title" => $_POST['title'],
@@ -9,4 +10,4 @@ $sql = 'UPDATE tasks SET title=:title, content=:content WHERE id=:id';
 $statement = $pdo->prepare($sql);
 $statement->execute($data);//true||false
 
-header("Location: http://localhost/myNotes0/Tasks2/"); exit;
+header("Location: http://localhost/MyTasks/Tasks2/"); exit;
