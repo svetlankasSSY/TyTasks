@@ -3,7 +3,7 @@ $pdo = new PDO("mysql:host=localhost; dbname=test", "root", "");
 $statement = $pdo->prepare("SELECT * FROM tasks WHERE id=:id");
 $statement->bindParam(":id", $_GET['id']);
 $statement->execute();
-$tasks = $statement->fetch(PDO::FETCH_ASSOC);
+$task = $statement->fetch(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -20,7 +20,7 @@ $tasks = $statement->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-12">
                     <h1><?= $task['title'];?></h1>
                     <p>
-                        <?=$task['title'];?>
+                        <?= $task['title'];?>
                     </p>
                     <a href="http://localhost/MyTasks/Tasks2/">Go Back</a>
                 </div>
